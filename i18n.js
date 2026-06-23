@@ -103,9 +103,6 @@ window.BASHIRA_COPY = {
     footerWhy: 'Why Bashira',
     footerCopyright: '© {{year}} Bashira Digital LLC — Registered in Wyoming, USA. All rights reserved.',
     footerTags: 'Software · AI · Marketing · Media',
-    lookLabel: 'Look',
-    lookPapel: '01 · Paper',
-    lookBloque: '02 · Block',
     services: [
       { n: '01', t: 'Artificial Intelligence and Automation', d: 'Enterprise chatbots, AI sales agents and automation workflows that cut costs and free your team from repetitive work. We integrate language models into your systems with measurable results.' },
       { n: '02', t: 'Software Development', d: 'Custom web and mobile applications, from MVP to production. Built well, maintainable and scalable — at the level of serious solutions.' },
