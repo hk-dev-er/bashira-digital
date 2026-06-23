@@ -44,6 +44,8 @@ window.BASHIRA_COPY = {
     footerWhy: 'Por qué Bashira',
     footerCopyright: '© {{year}} Bashira Digital LLC — Registrada en Wyoming, EE. UU. Todos los derechos reservados.',
     waLabel: 'Escribinos por WhatsApp',
+    menuOpen: 'Abrir menú',
+    menuClose: 'Cerrar menú',
     services: [
       { n: '01', t: 'Inteligencia Artificial y Automatización', d: 'Chatbots empresariales, agentes de ventas con IA y flujos de automatización que reducen costos y liberan a tu equipo de lo repetitivo. Integramos modelos de lenguaje a tus sistemas, con resultados medibles.' },
       { n: '02', t: 'Desarrollo de Software', d: 'Aplicaciones web y móviles a medida, del MVP al producto en producción. Construido bien, mantenible y escalable, a la altura de soluciones serias.' },
@@ -103,6 +105,8 @@ window.BASHIRA_COPY = {
     footerWhy: 'Why Bashira',
     footerCopyright: '© {{year}} Bashira Digital LLC — Registered in Wyoming, USA. All rights reserved.',
     waLabel: 'Message us on WhatsApp',
+    menuOpen: 'Open menu',
+    menuClose: 'Close menu',
     services: [
       { n: '01', t: 'Artificial Intelligence and Automation', d: 'Enterprise chatbots, AI sales agents and automation workflows that cut costs and free your team from repetitive work. We integrate language models into your systems with measurable results.' },
       { n: '02', t: 'Software Development', d: 'Custom web and mobile applications, from MVP to production. Built well, maintainable and scalable — at the level of serious solutions.' },

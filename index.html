@@ -60,6 +60,81 @@
   @media (max-width:640px){
     .wa-float{right:18px;bottom:18px;width:54px;height:54px;}
   }
+  .site-nav{
+    position:sticky;top:0;z-index:150;
+    background:rgba(246,244,236,0.92);
+    backdrop-filter:saturate(140%) blur(10px);
+    -webkit-backdrop-filter:saturate(140%) blur(10px);
+    border-bottom:1px solid rgba(35,32,88,0.10);
+  }
+  .nav-inner{
+    max-width:1240px;margin:0 auto;padding:14px 32px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+  }
+  .nav-brand{display:flex;align-items:center;gap:12px;flex-shrink:0;min-width:0;}
+  .nav-brand span{
+    font-family:'Poppins',sans-serif;font-weight:700;font-size:21px;
+    letter-spacing:-0.02em;color:#232058;white-space:nowrap;
+  }
+  .nav-desktop{display:flex;align-items:center;gap:28px;flex-wrap:nowrap;}
+  .nav-desktop a{
+    font-size:14.5px;font-weight:500;color:#3a3766;white-space:nowrap;
+    transition:color .2s ease;
+  }
+  .nav-desktop a:hover{color:#232058;}
+  .nav-lang{display:flex;align-items:center;gap:2px;background:rgba(35,32,88,0.08);padding:3px;border-radius:8px;flex-shrink:0;}
+  .nav-cta{
+    font-family:'Poppins',sans-serif;font-weight:600;font-size:14.5px;
+    background:#232058;color:#F6F4EC;padding:11px 18px;border-radius:11px;
+    white-space:nowrap;transition:transform .2s ease,background .2s ease;flex-shrink:0;
+  }
+  .nav-cta:hover{background:#1b1942;transform:translateY(-1px);}
+  .nav-mobile-tools{display:none;align-items:center;gap:10px;flex-shrink:0;}
+  .nav-toggle{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:44px;height:44px;border:none;border-radius:11px;cursor:pointer;
+    background:#232058;color:#F6F4EC;transition:background .2s ease,transform .2s ease;
+  }
+  .nav-toggle:hover{background:#1b1942;}
+  .nav-toggle svg{display:block;}
+  .nav-overlay{
+    position:fixed;inset:0;background:rgba(35,32,88,0.38);z-index:140;
+  }
+  .nav-drawer{
+    position:absolute;left:0;right:0;top:100%;z-index:151;
+    background:#F6F4EC;border-bottom:1px solid rgba(35,32,88,0.12);
+    box-shadow:0 18px 40px rgba(35,32,88,0.14);
+    padding:12px 20px 20px;
+  }
+  .nav-drawer-links{display:flex;flex-direction:column;gap:4px;}
+  .nav-drawer-links a{
+    display:block;padding:14px 12px;border-radius:10px;
+    font-size:16px;font-weight:500;color:#232058;
+    transition:background .2s ease;
+  }
+  .nav-drawer-links a:hover{background:rgba(35,32,88,0.06);}
+  .nav-drawer-footer{
+    margin-top:14px;padding-top:14px;border-top:1px solid rgba(35,32,88,0.10);
+    display:flex;flex-direction:column;gap:12px;
+  }
+  .nav-drawer-cta{
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;
+    background:#232058;color:#F6F4EC;padding:14px 18px;border-radius:12px;
+    text-align:center;transition:background .2s ease;
+  }
+  .nav-drawer-cta:hover{background:#1b1942;}
+  @media (max-width:1080px){
+    .nav-inner{padding:12px 20px;}
+    .nav-desktop{display:none;}
+    .nav-mobile-tools{display:flex;}
+  }
+  @media (max-width:640px){
+    .nav-inner{padding:12px 16px;}
+    .nav-brand svg{width:30px;height:30px;}
+    .nav-brand span{font-size:19px;}
+    .nav-drawer{padding:10px 16px 18px;}
+  }
 </style>
 </head>
 <body>
@@ -67,24 +142,55 @@
 <div style="background:#F6F4EC;overflow-x:hidden;">
 
   <!-- ============ NAV ============ -->
-  <nav style="position:sticky;top:0;z-index:150;background:rgba(246,244,236,0.86);backdrop-filter:saturate(140%) blur(10px);-webkit-backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid rgba(35,32,88,0.10);">
-    <div style="max-width:1240px;margin:0 auto;padding:16px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
-      <a href="#top" style="display:flex;align-items:center;gap:12px;">
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="#top" class="nav-brand" onClick="{{ closeMenu }}">
         <svg width="34" height="34" viewBox="0 0 56 56" aria-hidden="true"><rect x="4" y="4" width="48" height="48" rx="13" fill="#232058"/><path d="M20 12 V40 M20 12 H30 A7 7 0 0 1 30 26 H20 M20 26 H32 A7 7 0 0 1 32 40 H20" fill="none" stroke="#F6F4EC" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 43 Q28 51 42 43" fill="none" stroke="#E8A23D" stroke-width="4.5" stroke-linecap="round"/></svg>
-        <span style="font-family:'Poppins',sans-serif;font-weight:700;font-size:21px;letter-spacing:-0.02em;color:#232058;">bashira</span>
+        <span>bashira</span>
       </a>
-      <div style="display:flex;align-items:center;gap:30px;">
-        <a href="#servicios" style="font-size:14.5px;font-weight:500;color:#3a3766;" style-hover="color:#232058;">{{ t.navServices }}</a>
-        <a href="#nosotros" style="font-size:14.5px;font-weight:500;color:#3a3766;" style-hover="color:#232058;">{{ t.navAbout }}</a>
-        <a href="#porque" style="font-size:14.5px;font-weight:500;color:#3a3766;" style-hover="color:#232058;">{{ t.navWhy }}</a>
-        <a href="#medios" style="font-size:14.5px;font-weight:500;color:#3a3766;" style-hover="color:#232058;">{{ t.navMedia }}</a>
-        <div style="display:flex;align-items:center;gap:2px;background:rgba(35,32,88,0.08);padding:3px;border-radius:8px;">
+
+      <div class="nav-desktop">
+        <a href="#servicios">{{ t.navServices }}</a>
+        <a href="#nosotros">{{ t.navAbout }}</a>
+        <a href="#porque">{{ t.navWhy }}</a>
+        <a href="#medios">{{ t.navMedia }}</a>
+        <div class="nav-lang">
           <button onClick="{{ setEs }}" style="{{ langTabEs }}">ES</button>
           <button onClick="{{ setEn }}" style="{{ langTabEn }}">EN</button>
         </div>
-        <a href="#contacto" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:14.5px;background:#232058;color:#F6F4EC;padding:11px 20px;border-radius:11px;transition:transform .2s ease, background .2s ease;" style-hover="background:#1b1942;transform:translateY(-1px);">{{ t.navSchedule }}</a>
+        <a href="#contacto" class="nav-cta">{{ t.navSchedule }}</a>
+      </div>
+
+      <div class="nav-mobile-tools">
+        <div class="nav-lang">
+          <button onClick="{{ setEs }}" style="{{ langTabEs }}">ES</button>
+          <button onClick="{{ setEn }}" style="{{ langTabEn }}">EN</button>
+        </div>
+        <button type="button" class="nav-toggle" onClick="{{ toggleMenu }}" aria-label="{{ menuAriaLabel }}" aria-expanded="{{ menuOpen }}">
+          <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6 L18 18 M18 6 L6 18"/></svg>
+          </sc-if>
+          <sc-if value="{{ menuClosed }}" hint-placeholder-val="{{ true }}">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7 H20 M4 12 H20 M4 17 H20"/></svg>
+          </sc-if>
+        </button>
       </div>
     </div>
+
+    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+      <div class="nav-overlay" onClick="{{ closeMenu }}" aria-hidden="true"></div>
+      <div class="nav-drawer" role="dialog" aria-modal="true" aria-label="{{ t.menuOpen }}">
+        <div class="nav-drawer-links">
+          <a href="#servicios" onClick="{{ closeMenu }}">{{ t.navServices }}</a>
+          <a href="#nosotros" onClick="{{ closeMenu }}">{{ t.navAbout }}</a>
+          <a href="#porque" onClick="{{ closeMenu }}">{{ t.navWhy }}</a>
+          <a href="#medios" onClick="{{ closeMenu }}">{{ t.navMedia }}</a>
+        </div>
+        <div class="nav-drawer-footer">
+          <a href="#contacto" class="nav-drawer-cta" onClick="{{ closeMenu }}">{{ t.navSchedule }}</a>
+        </div>
+      </div>
+    </sc-if>
   </nav>
 
   <span id="top"></span>
@@ -243,7 +349,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
 class Component extends DCLogic {
-  state = { lang: 'es' };
+  state = { lang: 'es', menuOpen: false };
 
   getCopy(lang) {
     return (window.BASHIRA_COPY && window.BASHIRA_COPY[lang]) || window.BASHIRA_COPY.es;
@@ -260,6 +366,14 @@ class Component extends DCLogic {
     return 'es';
   }
 
+  toggleMenu() {
+    this.setState({ menuOpen: !this.state.menuOpen });
+  }
+
+  closeMenu() {
+    if (this.state.menuOpen) this.setState({ menuOpen: false });
+  }
+
   setLang(lang) {
     if (this.state.lang === lang) return;
     this.setState({ lang });
@@ -267,20 +381,31 @@ class Component extends DCLogic {
     if (window.BASHIRA_SEO) window.BASHIRA_SEO.apply(lang);
   }
 
+  syncMenuScrollLock(open) {
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+
   componentDidMount() {
     const lang = this.detectLang();
     if (lang !== this.state.lang) this.setState({ lang });
     if (window.BASHIRA_SEO) window.BASHIRA_SEO.apply(lang);
+    this._onResize = () => { if (window.innerWidth > 1080) this.closeMenu(); };
+    window.addEventListener('resize', this._onResize);
     this._raf = requestAnimationFrame(() => this.setupReveal());
   }
   componentDidUpdate(prevProps, prevState) {
     if (prevState.lang !== this.state.lang && window.BASHIRA_SEO) {
       window.BASHIRA_SEO.apply(this.state.lang);
     }
+    if (prevState.menuOpen !== this.state.menuOpen) {
+      this.syncMenuScrollLock(this.state.menuOpen);
+    }
   }
   componentWillUnmount() {
     if (this._io) this._io.disconnect();
     if (this._raf) cancelAnimationFrame(this._raf);
+    if (this._onResize) window.removeEventListener('resize', this._onResize);
+    document.body.style.overflow = '';
   }
 
   setupReveal() {
@@ -320,6 +445,11 @@ class Component extends DCLogic {
     return {
       t,
       lang,
+      menuOpen: this.state.menuOpen,
+      menuClosed: !this.state.menuOpen,
+      menuAriaLabel: this.state.menuOpen ? t.menuClose : t.menuOpen,
+      toggleMenu: () => this.toggleMenu(),
+      closeMenu: () => this.closeMenu(),
       footerCopyright: t.footerCopyright.replace('{{year}}', String(year)),
       setEs: () => this.setLang('es'),
       setEn: () => this.setLang('en'),
