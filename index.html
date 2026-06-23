@@ -382,7 +382,7 @@
       </div>
       <div style="border-top:1px solid rgba(246,244,236,0.16);margin-top:48px;padding-top:24px;display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;">
         <span style="font-size:13.5px;color:rgba(246,244,236,0.6);">{{ footerCopyright }}</span>
-        <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.06em;color:rgba(246,244,236,0.5);">{{ t.footerTags }}</span>
+        <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.06em;color:rgba(246,244,236,0.5);">{{ footerTags }}</span>
       </div>
     </div>
   </footer>
@@ -413,11 +413,15 @@ class Component extends DCLogic {
   }
 
   toggleMenu() {
-    this.setState({ menuOpen: !this.state.menuOpen });
+    const menuOpen = !this.state.menuOpen;
+    this.setState({ menuOpen });
+    this.syncMenuScrollLock(menuOpen);
   }
 
   closeMenu() {
-    if (this.state.menuOpen) this.setState({ menuOpen: false });
+    if (!this.state.menuOpen) return;
+    this.setState({ menuOpen: false });
+    this.syncMenuScrollLock(false);
   }
 
   setLang(lang) {
@@ -438,14 +442,6 @@ class Component extends DCLogic {
     this._onResize = () => { if (window.innerWidth > 1080) this.closeMenu(); };
     window.addEventListener('resize', this._onResize);
     this._raf = requestAnimationFrame(() => this.setupReveal());
-  }
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.lang !== this.state.lang && window.BASHIRA_SEO) {
-      window.BASHIRA_SEO.apply(this.state.lang);
-    }
-    if (prevState.menuOpen !== this.state.menuOpen) {
-      this.syncMenuScrollLock(this.state.menuOpen);
-    }
   }
   componentWillUnmount() {
     if (this._io) this._io.disconnect();
@@ -497,6 +493,7 @@ class Component extends DCLogic {
       toggleMenu: () => this.toggleMenu(),
       closeMenu: () => this.closeMenu(),
       footerCopyright: t.footerCopyright.replace('{{year}}', String(year)),
+      footerTags: t.footerTags,
       setEs: () => this.setLang('es'),
       setEn: () => this.setLang('en'),
       langTabEs: { ...langTabBase, background: lang === 'es' ? '#232058' : 'transparent', color: lang === 'es' ? '#F6F4EC' : '#3a3766' },
