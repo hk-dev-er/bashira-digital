@@ -22,8 +22,8 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.bashira.digital" }],
-      "destination": "https://bashira.digital/:path*",
+      "has": [{ "type": "host", "value": "www.bashiradigital.com" }],
+      "destination": "https://bashiradigital.com/:path*",
       "permanent": true
     }
   ]

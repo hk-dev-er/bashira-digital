@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./i18n.js"></script>
 <script src="./support.js"></script>
 </head>
 <body>
 <x-dc>
 <helmet>
-  <title>Bashira Digital — Estudio de IA, software y medios</title>
-  <meta name="description" content="Bashira Digital: estudio de IA, software a medida, marketing de performance y producción audiovisual para empresas en Latinoamérica y España.">
+  <title>{{ t.pageTitle }}</title>
+  <meta name="description" content="{{ t.metaDescription }}">
   <meta name="theme-color" content="#232058">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
@@ -17,10 +18,10 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta property="og:title" content="Bashira Digital">
-  <meta property="og:description" content="Inteligencia digital que trae buenas noticias. Estudio de IA, software, marketing y medios.">
-  <meta property="og:url" content="https://bashira.digital">
+  <meta property="og:description" content="{{ t.ogDescription }}">
+  <meta property="og:url" content="https://bashiradigital.com">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="es_ES">
+  <meta property="og:locale" content="{{ ogLocale }}">
   <meta name="twitter:card" content="summary">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,11 +45,15 @@
         <span style="font-family:'Poppins',sans-serif;font-weight:700;font-size:21px;letter-spacing:-0.02em;color:#232058;">bashira</span>
       </a>
       <div style="display:flex;align-items:center;gap:30px;">
-        <a href="#servicios" style="font-size:14.5px;font-weight:500;color:#3a3766;" style-hover="color:#232058;">Servicios</a>
-        <a href="#nosotros" style="font-size:14.5px;font-weight:500;color:#3a3766;" style-hover="color:#232058;">Nosotros</a>
-        <a href="#porque" style="font-size:14.5px;font-weight:500;color:#3a3766;" style-hover="color:#232058;">Por qué</a>
-        <a href="#medios" style="font-size:14.5px;font-weight:500;color:#3a3766;" style-hover="color:#232058;">Medios</a>
-        <a href="#contacto" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:14.5px;background:#232058;color:#F6F4EC;padding:11px 20px;border-radius:11px;transition:transform .2s ease, background .2s ease;" style-hover="background:#1b1942;transform:translateY(-1px);">Agendar</a>
+        <a href="#servicios" style="font-size:14.5px;font-weight:500;color:#3a3766;" style-hover="color:#232058;">{{ t.navServices }}</a>
+        <a href="#nosotros" style="font-size:14.5px;font-weight:500;color:#3a3766;" style-hover="color:#232058;">{{ t.navAbout }}</a>
+        <a href="#porque" style="font-size:14.5px;font-weight:500;color:#3a3766;" style-hover="color:#232058;">{{ t.navWhy }}</a>
+        <a href="#medios" style="font-size:14.5px;font-weight:500;color:#3a3766;" style-hover="color:#232058;">{{ t.navMedia }}</a>
+        <div style="display:flex;align-items:center;gap:2px;background:rgba(35,32,88,0.08);padding:3px;border-radius:8px;">
+          <button onClick="{{ setEs }}" style="{{ langTabEs }}">ES</button>
+          <button onClick="{{ setEn }}" style="{{ langTabEn }}">EN</button>
+        </div>
+        <a href="#contacto" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:14.5px;background:#232058;color:#F6F4EC;padding:11px 20px;border-radius:11px;transition:transform .2s ease, background .2s ease;" style-hover="background:#1b1942;transform:translateY(-1px);">{{ t.navSchedule }}</a>
       </div>
     </div>
   </nav>
@@ -63,13 +68,13 @@
     <section style="max-width:1240px;margin:0 auto;padding:96px 32px 52px;">
       <div data-reveal>
         <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.16em;text-transform:uppercase;color:#8d8ab0;display:flex;align-items:center;gap:12px;">
-          <span style="width:30px;height:1px;background:#E8A23D;display:inline-block;"></span>Inteligencia digital que trae buenas noticias
+          <span style="width:30px;height:1px;background:#E8A23D;display:inline-block;"></span>{{ t.tagline }}
         </div>
-        <h1 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(42px,6.6vw,86px);line-height:1.02;letter-spacing:-0.025em;max-width:16ch;margin:26px 0 0;color:#232058;">Estudio digital de IA, software y <span style="position:relative;display:inline-block;white-space:nowrap;">medios<svg style="position:absolute;left:0;bottom:-0.06em;width:100%;height:0.34em;" viewBox="0 0 120 14" preserveAspectRatio="none" aria-hidden="true"><path d="M3 5 Q60 17 117 5" fill="none" stroke="#E8A23D" stroke-width="5" stroke-linecap="round"/></svg></span>.</h1>
-        <p style="font-family:'Manrope',sans-serif;font-size:clamp(17px,1.5vw,21px);line-height:1.62;max-width:62ch;color:#46436f;margin:30px 0 0;">Diseñamos, desarrollamos y operamos productos digitales de punta a punta: software a medida, automatización con IA, marketing de performance y producción audiovisual. Una sola casa técnica para todo lo que tu negocio necesita en el mundo digital.</p>
+        <h1 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(42px,6.6vw,86px);line-height:1.02;letter-spacing:-0.025em;max-width:16ch;margin:26px 0 0;color:#232058;">{{ t.heroTitlePrefix }}<span style="position:relative;display:inline-block;white-space:nowrap;">{{ t.heroTitleWord }}<svg style="position:absolute;left:0;bottom:-0.06em;width:100%;height:0.34em;" viewBox="0 0 120 14" preserveAspectRatio="none" aria-hidden="true"><path d="M3 5 Q60 17 117 5" fill="none" stroke="#E8A23D" stroke-width="5" stroke-linecap="round"/></svg></span>{{ t.heroTitleSuffix }}</h1>
+        <p style="font-family:'Manrope',sans-serif;font-size:clamp(17px,1.5vw,21px);line-height:1.62;max-width:62ch;color:#46436f;margin:30px 0 0;">{{ t.heroSubtitle }}</p>
         <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:38px;">
-          <a href="#contacto" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;background:#232058;color:#F6F4EC;padding:16px 28px;border-radius:12px;display:inline-flex;align-items:center;gap:10px;transition:transform .2s ease, background .2s ease;" style-hover="background:#1b1942;transform:translateY(-2px);">Agendar una llamada <span style="font-size:18px;">→</span></a>
-          <a href="#servicios" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;background:transparent;color:#232058;padding:16px 28px;border-radius:12px;border:1.5px solid rgba(35,32,88,0.22);transition:border-color .2s ease, background .2s ease;" style-hover="border-color:#232058;background:rgba(35,32,88,0.04);">Ver lo que hacemos</a>
+          <a href="#contacto" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;background:#232058;color:#F6F4EC;padding:16px 28px;border-radius:12px;display:inline-flex;align-items:center;gap:10px;transition:transform .2s ease, background .2s ease;" style-hover="background:#1b1942;transform:translateY(-2px);">{{ t.ctaSchedule }} <span style="font-size:18px;">→</span></a>
+          <a href="#servicios" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;background:transparent;color:#232058;padding:16px 28px;border-radius:12px;border:1.5px solid rgba(35,32,88,0.22);transition:border-color .2s ease, background .2s ease;" style-hover="border-color:#232058;background:rgba(35,32,88,0.04);">{{ t.ctaSeeWork }}</a>
         </div>
       </div>
     </section>
@@ -77,7 +82,7 @@
     <!-- SHOWREEL placeholder -->
     <section style="max-width:1240px;margin:0 auto;padding:8px 32px 100px;">
       <div data-reveal style="aspect-ratio:16/6.2;border-radius:20px;border:1px solid rgba(35,32,88,0.14);background:repeating-linear-gradient(135deg, rgba(35,32,88,0.055) 0 14px, rgba(35,32,88,0.02) 14px 28px);display:flex;align-items:center;justify-content:center;">
-        <span style="font-family:'Space Mono',monospace;font-size:14px;letter-spacing:0.08em;color:rgba(35,32,88,0.42);">[ showreel · producción audiovisual ]</span>
+        <span style="font-family:'Space Mono',monospace;font-size:14px;letter-spacing:0.08em;color:rgba(35,32,88,0.42);">{{ t.showreel }}</span>
       </div>
     </section>
 
@@ -85,12 +90,12 @@
     <section id="nosotros" style="border-top:1px solid rgba(35,32,88,0.12);">
       <div style="max-width:1240px;margin:0 auto;padding:96px 32px;display:flex;flex-wrap:wrap;gap:56px;">
         <div data-reveal style="flex:0 1 320px;">
-          <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#E8A23D;">Quiénes somos</div>
-          <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,46px);line-height:1.08;letter-spacing:-0.02em;margin:18px 0 0;color:#232058;">Una sola casa técnica.</h2>
+          <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#E8A23D;">{{ t.aboutLabel }}</div>
+          <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,46px);line-height:1.08;letter-spacing:-0.02em;margin:18px 0 0;color:#232058;">{{ t.aboutTitle }}</h2>
         </div>
         <div data-reveal style="flex:1 1 460px;max-width:640px;">
-          <p style="font-size:clamp(17px,1.4vw,20px);line-height:1.62;color:#46436f;margin:0;">Bashira Digital es un estudio digital con estructura internacional (LLC en Estados Unidos) y un equipo técnico unificado. Nacimos para resolver lo que a la mayoría de las empresas les cuesta coordinar: la tecnología, el contenido y el crecimiento.</p>
-          <p style="font-size:clamp(17px,1.4vw,20px);line-height:1.62;color:#46436f;margin:22px 0 0;">En vez de contratar tres proveedores distintos, trabajás con un solo equipo que entiende cómo se conectan el software, los datos, la IA y la comunicación. Operamos para clientes en Argentina, Uruguay, España y Estados Unidos, combinando estándares de producción profesional con la agilidad de un estudio chico.</p>
+          <p style="font-size:clamp(17px,1.4vw,20px);line-height:1.62;color:#46436f;margin:0;">{{ t.aboutP1 }}</p>
+          <p style="font-size:clamp(17px,1.4vw,20px);line-height:1.62;color:#46436f;margin:22px 0 0;">{{ t.aboutP2 }}</p>
         </div>
       </div>
     </section>
@@ -100,8 +105,8 @@
       <div style="max-width:1240px;margin:0 auto;padding:96px 32px;">
         <div data-reveal style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:24px;">
           <div>
-            <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#E8A23D;">Servicios</div>
-            <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,46px);line-height:1.08;letter-spacing:-0.02em;margin:18px 0 0;color:#232058;">Construimos lo digital. Operamos el resultado.</h2>
+            <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#E8A23D;">{{ t.servicesLabel }}</div>
+            <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,46px);line-height:1.08;letter-spacing:-0.02em;margin:18px 0 0;color:#232058;">{{ t.servicesTitle }}</h2>
           </div>
         </div>
         <div style="border-bottom:1px solid rgba(35,32,88,0.12);">
@@ -121,8 +126,8 @@
       <svg style="position:absolute;right:-60px;bottom:-40px;width:320px;opacity:0.08;" viewBox="0 0 120 30" aria-hidden="true"><path d="M5 8 Q60 32 115 8" fill="none" stroke="#E8A23D" stroke-width="6" stroke-linecap="round"/></svg>
       <div style="max-width:1240px;margin:0 auto;padding:100px 32px;position:relative;">
         <div data-reveal style="max-width:620px;">
-          <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#E8A23D;">Por qué Bashira</div>
-          <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,46px);line-height:1.08;letter-spacing:-0.02em;margin:18px 0 0;color:#F6F4EC;">Menos proveedores. Más coherencia.</h2>
+          <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#E8A23D;">{{ t.whyLabel }}</div>
+          <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,46px);line-height:1.08;letter-spacing:-0.02em;margin:18px 0 0;color:#F6F4EC;">{{ t.whyTitle }}</h2>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:0 56px;margin-top:40px;">
           <sc-for list="{{ whyPoints }}" as="w" hint-placeholder-count="4">
@@ -140,13 +145,13 @@
     <section id="medios" style="border-top:1px solid rgba(35,32,88,0.12);">
       <div style="max-width:1240px;margin:0 auto;padding:96px 32px;display:flex;flex-wrap:wrap;gap:56px;align-items:center;">
         <div data-reveal style="flex:1 1 420px;">
-          <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#E8A23D;">División de medios</div>
-          <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,46px);line-height:1.06;letter-spacing:-0.02em;margin:18px 0 0;color:#232058;">Perrodismo.com</h2>
-          <p style="font-size:clamp(17px,1.4vw,19px);line-height:1.62;color:#46436f;margin:22px 0 0;max-width:52ch;">Nuestro diario digital y división de producción periodística. Combinamos periodismo, narrativa audiovisual y presentadores de IA para contar la actualidad internacional de otra forma. Es nuestro laboratorio de contenido y la prueba viviente de lo que podemos producir para vos.</p>
-          <a href="https://perrodismo.com" style="display:inline-flex;align-items:center;gap:10px;margin-top:28px;font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;color:#232058;border-bottom:2px solid #E8A23D;padding-bottom:3px;transition:gap .2s ease;" style-hover="gap:16px;">Visitar Perrodismo.com <span style="font-size:18px;">→</span></a>
+          <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#E8A23D;">{{ t.mediaLabel }}</div>
+          <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,46px);line-height:1.06;letter-spacing:-0.02em;margin:18px 0 0;color:#232058;">{{ t.mediaTitle }}</h2>
+          <p style="font-size:clamp(17px,1.4vw,19px);line-height:1.62;color:#46436f;margin:22px 0 0;max-width:52ch;">{{ t.mediaDesc }}</p>
+          <a href="https://perrodismo.com" style="display:inline-flex;align-items:center;gap:10px;margin-top:28px;font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;color:#232058;border-bottom:2px solid #E8A23D;padding-bottom:3px;transition:gap .2s ease;" style-hover="gap:16px;">{{ t.visitPerrodismo }} <span style="font-size:18px;">→</span></a>
         </div>
         <div data-reveal style="flex:1 1 380px;aspect-ratio:4/3;border-radius:20px;border:1px solid rgba(35,32,88,0.14);background:repeating-linear-gradient(135deg, rgba(35,32,88,0.055) 0 14px, rgba(35,32,88,0.02) 14px 28px);display:flex;align-items:center;justify-content:center;">
-          <span style="font-family:'Space Mono',monospace;font-size:13.5px;letter-spacing:0.06em;color:rgba(35,32,88,0.42);">[ perrodismo · diario digital ]</span>
+          <span style="font-family:'Space Mono',monospace;font-size:13.5px;letter-spacing:0.06em;color:rgba(35,32,88,0.42);">{{ t.perrodismoPlaceholder }}</span>
         </div>
       </div>
     </section>
@@ -155,11 +160,11 @@
     <section id="contacto" style="max-width:1240px;margin:0 auto;padding:40px 32px 110px;">
       <div data-reveal style="background:#232058;border-radius:28px;padding:clamp(40px,6vw,80px);position:relative;overflow:hidden;">
         <svg style="position:absolute;right:-40px;top:-30px;width:260px;opacity:0.1;" viewBox="0 0 120 30" aria-hidden="true"><path d="M5 8 Q60 32 115 8" fill="none" stroke="#E8A23D" stroke-width="6" stroke-linecap="round"/></svg>
-        <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(30px,4.2vw,52px);line-height:1.06;letter-spacing:-0.02em;margin:0;color:#F6F4EC;max-width:18ch;">Hablemos de tu próximo proyecto.</h2>
-        <p style="font-size:clamp(16px,1.4vw,19px);line-height:1.6;color:rgba(246,244,236,0.78);margin:22px 0 0;max-width:54ch;">Contanos qué necesitás —un producto, una campaña, una pieza de contenido o todo junto— y te respondemos con una propuesta concreta.</p>
+        <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(30px,4.2vw,52px);line-height:1.06;letter-spacing:-0.02em;margin:0;color:#F6F4EC;max-width:18ch;">{{ t.ctaTitle }}</h2>
+        <p style="font-size:clamp(16px,1.4vw,19px);line-height:1.6;color:rgba(246,244,236,0.78);margin:22px 0 0;max-width:54ch;">{{ t.ctaDesc }}</p>
         <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:36px;">
-          <a href="mailto:hola@bashira.digital" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;background:#E8A23D;color:#232058;padding:16px 28px;border-radius:12px;transition:transform .2s ease, background .2s ease;" style-hover="background:#f0ad4a;transform:translateY(-2px);">Agendar una llamada</a>
-          <a href="mailto:hola@bashira.digital" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;background:transparent;color:#F6F4EC;padding:16px 28px;border-radius:12px;border:1.5px solid rgba(246,244,236,0.3);transition:border-color .2s ease;" style-hover="border-color:#F6F4EC;">Escribirnos</a>
+          <a href="mailto:hola@bashiradigital.com" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;background:#E8A23D;color:#232058;padding:16px 28px;border-radius:12px;transition:transform .2s ease, background .2s ease;" style-hover="background:#f0ad4a;transform:translateY(-2px);">{{ t.ctaSchedule }}</a>
+          <a href="mailto:hola@bashiradigital.com" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;background:transparent;color:#F6F4EC;padding:16px 28px;border-radius:12px;border:1.5px solid rgba(246,244,236,0.3);transition:border-color .2s ease;" style-hover="border-color:#F6F4EC;">{{ t.ctaWrite }}</a>
         </div>
       </div>
     </section>
@@ -176,16 +181,16 @@
       <svg style="position:absolute;right:-50px;bottom:-50px;width:340px;opacity:0.08;" viewBox="0 0 120 30" aria-hidden="true"><path d="M5 8 Q60 32 115 8" fill="none" stroke="#E8A23D" stroke-width="6" stroke-linecap="round"/></svg>
       <div style="max-width:1240px;margin:0 auto;padding:84px 32px 88px;display:flex;flex-wrap:wrap;gap:56px;align-items:center;position:relative;">
         <div data-reveal style="flex:1 1 480px;">
-          <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.16em;text-transform:uppercase;color:#E8A23D;display:flex;align-items:center;gap:12px;"><span style="width:30px;height:1px;background:#E8A23D;display:inline-block;"></span>Inteligencia digital que trae buenas noticias</div>
-          <h1 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(40px,5.6vw,72px);line-height:1.04;letter-spacing:-0.025em;margin:24px 0 0;color:#F6F4EC;max-width:15ch;">Estudio digital de IA, software y medios.</h1>
-          <p style="font-size:clamp(16px,1.4vw,19px);line-height:1.6;color:rgba(246,244,236,0.78);margin:26px 0 0;max-width:54ch;">Diseñamos, desarrollamos y operamos productos digitales de punta a punta. Una sola casa técnica para software a medida, IA, marketing de performance y producción audiovisual.</p>
+          <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.16em;text-transform:uppercase;color:#E8A23D;display:flex;align-items:center;gap:12px;"><span style="width:30px;height:1px;background:#E8A23D;display:inline-block;"></span>{{ t.tagline }}</div>
+          <h1 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(40px,5.6vw,72px);line-height:1.04;letter-spacing:-0.025em;margin:24px 0 0;color:#F6F4EC;max-width:15ch;">{{ t.heroTitleFull }}</h1>
+          <p style="font-size:clamp(16px,1.4vw,19px);line-height:1.6;color:rgba(246,244,236,0.78);margin:26px 0 0;max-width:54ch;">{{ t.heroSubtitleShort }}</p>
           <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;">
-            <a href="#contacto" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;background:#E8A23D;color:#232058;padding:16px 28px;border-radius:12px;display:inline-flex;align-items:center;gap:10px;transition:transform .2s ease, background .2s ease;" style-hover="background:#f0ad4a;transform:translateY(-2px);">Agendar una llamada <span style="font-size:18px;">→</span></a>
-            <a href="#servicios" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;background:transparent;color:#F6F4EC;padding:16px 28px;border-radius:12px;border:1.5px solid rgba(246,244,236,0.3);transition:border-color .2s ease;" style-hover="border-color:#F6F4EC;">Ver lo que hacemos</a>
+            <a href="#contacto" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;background:#E8A23D;color:#232058;padding:16px 28px;border-radius:12px;display:inline-flex;align-items:center;gap:10px;transition:transform .2s ease, background .2s ease;" style-hover="background:#f0ad4a;transform:translateY(-2px);">{{ t.ctaSchedule }} <span style="font-size:18px;">→</span></a>
+            <a href="#servicios" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;background:transparent;color:#F6F4EC;padding:16px 28px;border-radius:12px;border:1.5px solid rgba(246,244,236,0.3);transition:border-color .2s ease;" style-hover="border-color:#F6F4EC;">{{ t.ctaSeeWork }}</a>
           </div>
         </div>
         <div data-reveal style="flex:1 1 360px;aspect-ratio:4/3.4;border-radius:20px;border:1px solid rgba(246,244,236,0.2);background:repeating-linear-gradient(135deg, rgba(246,244,236,0.08) 0 14px, rgba(246,244,236,0.03) 14px 28px);display:flex;align-items:center;justify-content:center;">
-          <span style="font-family:'Space Mono',monospace;font-size:13.5px;letter-spacing:0.06em;color:rgba(246,244,236,0.55);">[ showreel · trabajo ]</span>
+          <span style="font-family:'Space Mono',monospace;font-size:13.5px;letter-spacing:0.06em;color:rgba(246,244,236,0.55);">{{ t.showreelShort }}</span>
         </div>
       </div>
     </section>
@@ -195,12 +200,12 @@
       <div style="max-width:1240px;margin:0 auto;padding:88px 32px 40px;">
         <div data-reveal style="background:#FBFAF3;border:1px solid rgba(35,32,88,0.12);border-radius:24px;padding:clamp(32px,4.5vw,56px);display:flex;flex-wrap:wrap;gap:48px;">
           <div style="flex:0 1 300px;">
-            <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#E8A23D;">Quiénes somos</div>
-            <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(28px,3.2vw,40px);line-height:1.08;letter-spacing:-0.02em;margin:16px 0 0;color:#232058;">Una sola casa técnica.</h2>
+            <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#E8A23D;">{{ t.aboutLabel }}</div>
+            <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(28px,3.2vw,40px);line-height:1.08;letter-spacing:-0.02em;margin:16px 0 0;color:#232058;">{{ t.aboutTitle }}</h2>
           </div>
           <div style="flex:1 1 440px;max-width:640px;">
-            <p style="font-size:clamp(16px,1.3vw,18px);line-height:1.62;color:#46436f;margin:0;">Bashira Digital es un estudio digital con estructura internacional (LLC en Estados Unidos) y un equipo técnico unificado. Resolvemos lo que a la mayoría de las empresas les cuesta coordinar: la tecnología, el contenido y el crecimiento.</p>
-            <p style="font-size:clamp(16px,1.3vw,18px);line-height:1.62;color:#46436f;margin:20px 0 0;">En vez de contratar tres proveedores distintos, trabajás con un solo equipo que entiende cómo se conectan el software, los datos, la IA y la comunicación. Operamos en Argentina, Uruguay, España y Estados Unidos.</p>
+            <p style="font-size:clamp(16px,1.3vw,18px);line-height:1.62;color:#46436f;margin:0;">{{ t.aboutP1 }}</p>
+            <p style="font-size:clamp(16px,1.3vw,18px);line-height:1.62;color:#46436f;margin:20px 0 0;">{{ t.aboutP2Short }}</p>
           </div>
         </div>
       </div>
@@ -210,8 +215,8 @@
     <section id="servicios">
       <div style="max-width:1240px;margin:0 auto;padding:64px 32px 40px;">
         <div data-reveal style="margin-bottom:36px;">
-          <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#E8A23D;">Servicios</div>
-          <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,46px);line-height:1.08;letter-spacing:-0.02em;margin:16px 0 0;color:#232058;">Construimos lo digital. Operamos el resultado.</h2>
+          <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#E8A23D;">{{ t.servicesLabel }}</div>
+          <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,46px);line-height:1.08;letter-spacing:-0.02em;margin:16px 0 0;color:#232058;">{{ t.servicesTitle }}</h2>
         </div>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:20px;">
           <sc-for list="{{ services }}" as="s" hint-placeholder-count="5">
@@ -229,8 +234,8 @@
     <section id="porque">
       <div style="max-width:1240px;margin:0 auto;padding:64px 32px 40px;">
         <div data-reveal style="margin-bottom:36px;max-width:620px;">
-          <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#E8A23D;">Por qué Bashira</div>
-          <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,46px);line-height:1.08;letter-spacing:-0.02em;margin:16px 0 0;color:#232058;">Menos proveedores. Más coherencia.</h2>
+          <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#E8A23D;">{{ t.whyLabel }}</div>
+          <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,46px);line-height:1.08;letter-spacing:-0.02em;margin:16px 0 0;color:#232058;">{{ t.whyTitle }}</h2>
         </div>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:20px;">
           <sc-for list="{{ whyPoints }}" as="w" hint-placeholder-count="4">
@@ -249,13 +254,13 @@
       <div style="max-width:1240px;margin:0 auto;padding:64px 32px 40px;">
         <div data-reveal style="background:#FBFAF3;border:1px solid rgba(35,32,88,0.12);border-radius:24px;padding:clamp(32px,4.5vw,56px);display:flex;flex-wrap:wrap;gap:48px;align-items:center;">
           <div style="flex:1 1 400px;">
-            <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#E8A23D;">División de medios</div>
-            <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(28px,3.4vw,44px);line-height:1.06;letter-spacing:-0.02em;margin:16px 0 0;color:#232058;">Perrodismo.com</h2>
-            <p style="font-size:clamp(16px,1.3vw,18px);line-height:1.6;color:#46436f;margin:20px 0 0;max-width:50ch;">Nuestro diario digital. Combinamos periodismo, narrativa audiovisual y presentadores de IA para contar la actualidad internacional de otra forma — nuestro laboratorio de contenido y la prueba de lo que producimos para vos.</p>
-            <a href="https://perrodismo.com" style="display:inline-flex;align-items:center;gap:10px;margin-top:26px;font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;color:#232058;border-bottom:2px solid #E8A23D;padding-bottom:3px;transition:gap .2s ease;" style-hover="gap:16px;">Visitar Perrodismo.com <span style="font-size:18px;">→</span></a>
+            <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#E8A23D;">{{ t.mediaLabel }}</div>
+            <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(28px,3.4vw,44px);line-height:1.06;letter-spacing:-0.02em;margin:16px 0 0;color:#232058;">{{ t.mediaTitle }}</h2>
+            <p style="font-size:clamp(16px,1.3vw,18px);line-height:1.6;color:#46436f;margin:20px 0 0;max-width:50ch;">{{ t.mediaDescShort }}</p>
+            <a href="https://perrodismo.com" style="display:inline-flex;align-items:center;gap:10px;margin-top:26px;font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;color:#232058;border-bottom:2px solid #E8A23D;padding-bottom:3px;transition:gap .2s ease;" style-hover="gap:16px;">{{ t.visitPerrodismo }} <span style="font-size:18px;">→</span></a>
           </div>
           <div style="flex:1 1 320px;aspect-ratio:4/3;border-radius:16px;border:1px solid rgba(35,32,88,0.14);background:repeating-linear-gradient(135deg, rgba(35,32,88,0.055) 0 14px, rgba(35,32,88,0.02) 14px 28px);display:flex;align-items:center;justify-content:center;">
-            <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.06em;color:rgba(35,32,88,0.42);">[ perrodismo · diario ]</span>
+            <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.06em;color:rgba(35,32,88,0.42);">{{ t.perrodismoPlaceholderShort }}</span>
           </div>
         </div>
       </div>
@@ -264,11 +269,11 @@
     <!-- CTA -->
     <section id="contacto" style="max-width:1240px;margin:0 auto;padding:40px 32px 110px;">
       <div data-reveal style="background:#E8A23D;border-radius:28px;padding:clamp(40px,6vw,76px);">
-        <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(30px,4.2vw,52px);line-height:1.05;letter-spacing:-0.02em;margin:0;color:#232058;max-width:18ch;">Hablemos de tu próximo proyecto.</h2>
-        <p style="font-size:clamp(16px,1.4vw,19px);line-height:1.55;color:#3a2f12;margin:20px 0 0;max-width:54ch;">Contanos qué necesitás —un producto, una campaña, una pieza de contenido o todo junto— y te respondemos con una propuesta concreta.</p>
+        <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(30px,4.2vw,52px);line-height:1.05;letter-spacing:-0.02em;margin:0;color:#232058;max-width:18ch;">{{ t.ctaTitle }}</h2>
+        <p style="font-size:clamp(16px,1.4vw,19px);line-height:1.55;color:#3a2f12;margin:20px 0 0;max-width:54ch;">{{ t.ctaDesc }}</p>
         <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;">
-          <a href="mailto:hola@bashira.digital" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;background:#232058;color:#F6F4EC;padding:16px 28px;border-radius:12px;transition:transform .2s ease, background .2s ease;" style-hover="background:#1b1942;transform:translateY(-2px);">Agendar una llamada</a>
-          <a href="mailto:hola@bashira.digital" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;background:transparent;color:#232058;padding:16px 28px;border-radius:12px;border:1.5px solid rgba(35,32,88,0.35);transition:border-color .2s ease, background .2s ease;" style-hover="border-color:#232058;background:rgba(35,32,88,0.06);">Escribirnos</a>
+          <a href="mailto:hola@bashiradigital.com" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;background:#232058;color:#F6F4EC;padding:16px 28px;border-radius:12px;transition:transform .2s ease, background .2s ease;" style-hover="background:#1b1942;transform:translateY(-2px);">{{ t.ctaSchedule }}</a>
+          <a href="mailto:hola@bashiradigital.com" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;background:transparent;color:#232058;padding:16px 28px;border-radius:12px;border:1.5px solid rgba(35,32,88,0.35);transition:border-color .2s ease, background .2s ease;" style-hover="border-color:#232058;background:rgba(35,32,88,0.06);">{{ t.ctaWrite }}</a>
         </div>
       </div>
     </section>
@@ -285,44 +290,44 @@
             <svg width="32" height="32" viewBox="0 0 56 56" aria-hidden="true"><rect x="4" y="4" width="48" height="48" rx="13" fill="#F6F4EC"/><path d="M20 12 V40 M20 12 H30 A7 7 0 0 1 30 26 H20 M20 26 H32 A7 7 0 0 1 32 40 H20" fill="none" stroke="#232058" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 43 Q28 51 42 43" fill="none" stroke="#E8A23D" stroke-width="4.5" stroke-linecap="round"/></svg>
             <span style="font-family:'Poppins',sans-serif;font-weight:700;font-size:20px;letter-spacing:-0.02em;color:#F6F4EC;">bashira</span>
           </div>
-          <p style="font-size:15px;line-height:1.6;color:rgba(246,244,236,0.7);margin:18px 0 0;">Estudio digital · IA, software, marketing y medios. Construimos y operamos lo que tu negocio necesita online.</p>
+          <p style="font-size:15px;line-height:1.6;color:rgba(246,244,236,0.7);margin:18px 0 0;">{{ t.footerTagline }}</p>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:48px;">
           <div>
-            <div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#8d8ab0;margin-bottom:16px;">Navegación</div>
+            <div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#8d8ab0;margin-bottom:16px;">{{ t.footerNav }}</div>
             <div style="display:flex;flex-direction:column;gap:11px;">
-              <a href="#servicios" style="font-size:15px;color:rgba(246,244,236,0.82);" style-hover="color:#E8A23D;">Servicios</a>
-              <a href="#nosotros" style="font-size:15px;color:rgba(246,244,236,0.82);" style-hover="color:#E8A23D;">Nosotros</a>
-              <a href="#porque" style="font-size:15px;color:rgba(246,244,236,0.82);" style-hover="color:#E8A23D;">Por qué Bashira</a>
-              <a href="#medios" style="font-size:15px;color:rgba(246,244,236,0.82);" style-hover="color:#E8A23D;">Perrodismo.com</a>
+              <a href="#servicios" style="font-size:15px;color:rgba(246,244,236,0.82);" style-hover="color:#E8A23D;">{{ t.navServices }}</a>
+              <a href="#nosotros" style="font-size:15px;color:rgba(246,244,236,0.82);" style-hover="color:#E8A23D;">{{ t.navAbout }}</a>
+              <a href="#porque" style="font-size:15px;color:rgba(246,244,236,0.82);" style-hover="color:#E8A23D;">{{ t.footerWhy }}</a>
+              <a href="#medios" style="font-size:15px;color:rgba(246,244,236,0.82);" style-hover="color:#E8A23D;">{{ t.mediaTitle }}</a>
             </div>
           </div>
           <div>
-            <div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#8d8ab0;margin-bottom:16px;">Contacto</div>
+            <div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#8d8ab0;margin-bottom:16px;">{{ t.footerContact }}</div>
             <div style="display:flex;flex-direction:column;gap:11px;">
-              <a href="mailto:hola@bashira.digital" style="font-size:15px;color:rgba(246,244,236,0.82);" style-hover="color:#E8A23D;">hola@bashira.digital</a>
-              <a href="#contacto" style="font-size:15px;color:rgba(246,244,236,0.82);" style-hover="color:#E8A23D;">Agendar una llamada</a>
+              <a href="mailto:hola@bashiradigital.com" style="font-size:15px;color:rgba(246,244,236,0.82);" style-hover="color:#E8A23D;">hola@bashiradigital.com</a>
+              <a href="#contacto" style="font-size:15px;color:rgba(246,244,236,0.82);" style-hover="color:#E8A23D;">{{ t.ctaSchedule }}</a>
             </div>
           </div>
         </div>
       </div>
       <div style="border-top:1px solid rgba(246,244,236,0.16);margin-top:48px;padding-top:24px;display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;">
-        <span style="font-size:13.5px;color:rgba(246,244,236,0.6);">© {{ year }} Bashira Digital LLC — Registrada en Wyoming, EE. UU. Todos los derechos reservados.</span>
-        <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.06em;color:rgba(246,244,236,0.5);">Software · IA · Marketing · Medios</span>
+        <span style="font-size:13.5px;color:rgba(246,244,236,0.6);">{{ footerCopyright }}</span>
+        <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.06em;color:rgba(246,244,236,0.5);">{{ t.footerTags }}</span>
       </div>
     </div>
   </footer>
 
   <!-- ============ SELECTOR DE VARIANTE ============ -->
   <div style="position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:300;display:flex;align-items:center;gap:6px;background:#232058;padding:6px;border-radius:100px;box-shadow:0 10px 34px rgba(35,32,88,0.32);">
-    <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#8d8ab0;padding:0 8px 0 10px;">Look</span>
+    <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#8d8ab0;padding:0 8px 0 10px;">{{ t.lookLabel }}</span>
     <sc-if value="{{ isPapel }}" hint-placeholder-val="{{ true }}">
-      <button onClick="{{ setPapel }}" style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.04em;padding:9px 17px;border-radius:100px;border:none;cursor:pointer;white-space:nowrap;background:#F6F4EC;color:#232058;">01 · Papel</button>
-      <button onClick="{{ setBloque }}" style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.04em;padding:9px 17px;border-radius:100px;border:none;cursor:pointer;white-space:nowrap;background:transparent;color:rgba(246,244,236,0.7);transition:color .2s ease;" style-hover="color:#F6F4EC;">02 · Bloque</button>
+      <button onClick="{{ setPapel }}" style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.04em;padding:9px 17px;border-radius:100px;border:none;cursor:pointer;white-space:nowrap;background:#F6F4EC;color:#232058;">{{ t.lookPapel }}</button>
+      <button onClick="{{ setBloque }}" style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.04em;padding:9px 17px;border-radius:100px;border:none;cursor:pointer;white-space:nowrap;background:transparent;color:rgba(246,244,236,0.7);transition:color .2s ease;" style-hover="color:#F6F4EC;">{{ t.lookBloque }}</button>
     </sc-if>
     <sc-if value="{{ isBloque }}" hint-placeholder-val="{{ true }}">
-      <button onClick="{{ setPapel }}" style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.04em;padding:9px 17px;border-radius:100px;border:none;cursor:pointer;white-space:nowrap;background:transparent;color:rgba(246,244,236,0.7);transition:color .2s ease;" style-hover="color:#F6F4EC;">01 · Papel</button>
-      <button onClick="{{ setBloque }}" style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.04em;padding:9px 17px;border-radius:100px;border:none;cursor:pointer;white-space:nowrap;background:#F6F4EC;color:#232058;">02 · Bloque</button>
+      <button onClick="{{ setPapel }}" style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.04em;padding:9px 17px;border-radius:100px;border:none;cursor:pointer;white-space:nowrap;background:transparent;color:rgba(246,244,236,0.7);transition:color .2s ease;" style-hover="color:#F6F4EC;">{{ t.lookPapel }}</button>
+      <button onClick="{{ setBloque }}" style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.04em;padding:9px 17px;border-radius:100px;border:none;cursor:pointer;white-space:nowrap;background:#F6F4EC;color:#232058;">{{ t.lookBloque }}</button>
     </sc-if>
   </div>
 
@@ -330,7 +335,22 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
 class Component extends DCLogic {
-  state = { look: 'papel' };
+  state = { look: 'papel', lang: 'es' };
+
+  getCopy(lang) {
+    return (window.BASHIRA_COPY && window.BASHIRA_COPY[lang]) || window.BASHIRA_COPY.es;
+  }
+
+  detectLang() {
+    try {
+      const saved = localStorage.getItem('bashira-lang');
+      if (saved === 'es' || saved === 'en') return saved;
+    } catch (e) {}
+    try {
+      return navigator.language && navigator.language.startsWith('es') ? 'es' : 'en';
+    } catch (e) {}
+    return 'es';
+  }
 
   setLook(look) {
     if (this.state.look === look) return;
@@ -338,12 +358,37 @@ class Component extends DCLogic {
     try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) { window.scrollTo(0, 0); }
   }
 
+  setLang(lang) {
+    if (this.state.lang === lang) return;
+    this.setState({ lang });
+    try { localStorage.setItem('bashira-lang', lang); } catch (e) {}
+    this.applyDocumentLang(lang);
+  }
+
+  applyDocumentLang(lang) {
+    const t = this.getCopy(lang);
+    document.documentElement.lang = lang;
+    document.title = t.pageTitle;
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute('content', t.metaDescription);
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) ogDesc.setAttribute('content', t.ogDescription);
+    const ogLocale = document.querySelector('meta[property="og:locale"]');
+    if (ogLocale) ogLocale.setAttribute('content', lang === 'es' ? 'es_ES' : 'en_US');
+  }
+
   componentDidMount() {
+    const lang = this.detectLang();
+    if (lang !== this.state.lang) this.setState({ lang });
+    this.applyDocumentLang(lang);
     this._raf = requestAnimationFrame(() => this.setupReveal());
   }
   componentDidUpdate(prevProps, prevState) {
     if (prevState.look !== this.state.look) {
       this._raf = requestAnimationFrame(() => this.setupReveal());
+    }
+    if (prevState.lang !== this.state.lang) {
+      this.applyDocumentLang(this.state.lang);
     }
   }
   componentWillUnmount() {
@@ -373,6 +418,9 @@ class Component extends DCLogic {
 
   renderVals() {
     const look = this.state.look;
+    const lang = this.state.lang;
+    const t = this.getCopy(lang);
+    const year = 2026;
     const tabBase = {
       fontFamily: '"Space Mono", monospace',
       fontSize: '12px',
@@ -384,30 +432,35 @@ class Component extends DCLogic {
       whiteSpace: 'nowrap',
       transition: 'background .25s ease, color .25s ease',
     };
-    const services = [
-      { n: '01', t: 'Inteligencia Artificial y Automatización', d: 'Chatbots empresariales, agentes de ventas con IA y flujos de automatización que reducen costos y liberan a tu equipo de lo repetitivo. Integramos modelos de lenguaje a tus sistemas, con resultados medibles.' },
-      { n: '02', t: 'Desarrollo de Software', d: 'Aplicaciones web y móviles a medida, del MVP al producto en producción. Construido bien, mantenible y escalable, a la altura de soluciones serias.' },
-      { n: '03', t: 'Marketing Digital y Performance', d: 'SEO, Meta Ads y Google Ads orientados a resultados. No vendemos “presencia”: diseñamos campañas con objetivos claros, métricas transparentes y optimización continua.' },
-      { n: '04', t: 'Producción Audiovisual y Medios', d: 'Contenido y documentales con calidad cinematográfica, flujos profesionales (DaVinci Resolve, Adobe Media Encoder) y lo último en IA para consistencia visual. Hogar de Perrodismo.com.' },
-      { n: '05', t: 'E-commerce y Tiendas Online', d: 'Montamos y operamos tiendas completas: catálogo, fulfillment con terceros, automatización de marketing y analítica. Si vendés productos, te armamos la operación digital que los mueve.' },
-    ];
-    const whyPoints = [
-      { n: '01', t: 'Un solo equipo, todo el stack.', d: 'El mismo equipo que automatiza tus procesos produce tu contenido y corre tus campañas. Menos coordinación, más coherencia.' },
-      { n: '02', t: 'Estructura internacional.', d: 'Operamos a través de una LLC en Estados Unidos, lo que simplifica la contratación y el cobro para clientes globales.' },
-      { n: '03', t: 'Tecnología de frontera, sin humo.', d: 'Usamos IA donde mueve la aguja y la combinamos con criterio humano. Te vendemos el resultado, no la herramienta de moda.' },
-      { n: '04', t: 'Calidad de producción profesional.', d: 'Desde el código hasta el video, trabajamos con estándares de la industria.' },
-    ];
+    const langTabBase = {
+      fontFamily: '"Space Mono", monospace',
+      fontSize: '12px',
+      fontWeight: '600',
+      padding: '6px 10px',
+      borderRadius: '6px',
+      border: 'none',
+      cursor: 'pointer',
+      transition: 'background .2s ease, color .2s ease',
+    };
     return {
+      t,
+      lang,
+      ogLocale: lang === 'es' ? 'es_ES' : 'en_US',
+      footerCopyright: t.footerCopyright.replace('{{year}}', String(year)),
       look,
       isPapel: look === 'papel',
       isBloque: look === 'bloque',
       setPapel: () => this.setLook('papel'),
       setBloque: () => this.setLook('bloque'),
+      setEs: () => this.setLang('es'),
+      setEn: () => this.setLang('en'),
+      langTabEs: { ...langTabBase, background: lang === 'es' ? '#232058' : 'transparent', color: lang === 'es' ? '#F6F4EC' : '#3a3766' },
+      langTabEn: { ...langTabBase, background: lang === 'en' ? '#232058' : 'transparent', color: lang === 'en' ? '#F6F4EC' : '#3a3766' },
       tabA: { ...tabBase, background: look === 'papel' ? '#F6F4EC' : 'transparent', color: look === 'papel' ? '#232058' : 'rgba(246,244,236,0.7)' },
       tabB: { ...tabBase, background: look === 'bloque' ? '#F6F4EC' : 'transparent', color: look === 'bloque' ? '#232058' : 'rgba(246,244,236,0.7)' },
-      services,
-      whyPoints,
-      year: 2026,
+      services: t.services,
+      whyPoints: t.whyPoints,
+      year,
     };
   }
 }
