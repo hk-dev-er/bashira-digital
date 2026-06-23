@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;scroll-padding-top:88px;}
+    body{margin:0;background:#F6F4EC;color:#232058;font-family:"Manrope",system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+    ::selection{background:#E8A23D;color:#232058;}
+    a{color:inherit;text-decoration:none;}
+  </style>
+</helmet>
+
+<div style="background:#F6F4EC;overflow-x:hidden;">
+
+  <!-- ============ NAV (compartido) ============ -->
+  <nav style="position:sticky;top:0;z-index:150;background:rgba(246,244,236,0.86);backdrop-filter:saturate(140%) blur(10px);-webkit-backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid rgba(35,32,88,0.10);">
+    <div style="max-width:1240px;margin:0 auto;padding:16px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+      <a href="#top" style="display:flex;align-items:center;gap:12px;">
+        <svg width="34" height="34" viewBox="0 0 56 56" aria-hidden="true"><rect x="4" y="4" width="48" height="48" rx="13" fill="#232058"/><path d="M20 12 V40 M20 12 H30 A7 7 0 0 1 30 26 H20 M20 26 H32 A7 7 0 0 1 32 40 H20" fill="none" stroke="#F6F4EC" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 43 Q28 51 42 43" fill="none" stroke="#E8A23D" stroke-width="4.5" stroke-linecap="round"/></svg>
+        <span style="font-family:'Poppins',sans-serif;font-weight:700;font-size:21px;letter-spacing:-0.02em;color:#232058;">bashira</span>
+      </a>
+      <div style="display:flex;align-items:center;gap:30px;">
+        <a href="#servicios" style="font-size:14.5px;font-weight:500;color:#3a3766;" style-hover="color:#232058;">Servicios</a>
+        <a href="#nosotros" style="font-size:14.5px;font-weight:500;color:#3a3766;" style-hover="color:#232058;">Nosotros</a>
+        <a href="#porque" style="font-size:14.5px;font-weight:500;color:#3a3766;" style-hover="color:#232058;">Por qué</a>
+        <a href="#medios" style="font-size:14.5px;font-weight:500;color:#3a3766;" style-hover="color:#232058;">Medios</a>
+        <a href="#contacto" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:14.5px;background:#232058;color:#F6F4EC;padding:11px 20px;border-radius:11px;transition:transform .2s ease, background .2s ease;" style-hover="background:#1b1942;transform:translateY(-1px);">Agendar</a>
+      </div>
+    </div>
+  </nav>
+
+  <span id="top"></span>
+
+  <!-- ============ LOOK 01 · PAPEL ============ -->
+  <sc-if value="{{ isPapel }}" hint-placeholder-val="{{ true }}">
+  <main>
+
+    <!-- HERO -->
+    <section style="max-width:1240px;margin:0 auto;padding:96px 32px 52px;">
+      <div data-reveal>
+        <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.16em;text-transform:uppercase;color:#8d8ab0;display:flex;align-items:center;gap:12px;">
+          <span style="width:30px;height:1px;background:#E8A23D;display:inline-block;"></span>Inteligencia digital que trae buenas noticias
+        </div>
+        <h1 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(42px,6.6vw,86px);line-height:1.02;letter-spacing:-0.025em;max-width:16ch;margin:26px 0 0;color:#232058;">Estudio digital de IA, software y <span style="position:relative;display:inline-block;white-space:nowrap;">medios<svg style="position:absolute;left:0;bottom:-0.06em;width:100%;height:0.34em;" viewBox="0 0 120 14" preserveAspectRatio="none" aria-hidden="true"><path d="M3 5 Q60 17 117 5" fill="none" stroke="#E8A23D" stroke-width="5" stroke-linecap="round"/></svg></span>.</h1>
+        <p style="font-family:'Manrope',sans-serif;font-size:clamp(17px,1.5vw,21px);line-height:1.62;max-width:62ch;color:#46436f;margin:30px 0 0;">Diseñamos, desarrollamos y operamos productos digitales de punta a punta: software a medida, automatización con IA, marketing de performance y producción audiovisual. Una sola casa técnica para todo lo que tu negocio necesita en el mundo digital.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:38px;">
+          <a href="#contacto" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;background:#232058;color:#F6F4EC;padding:16px 28px;border-radius:12px;display:inline-flex;align-items:center;gap:10px;transition:transform .2s ease, background .2s ease;" style-hover="background:#1b1942;transform:translateY(-2px);">Agendar una llamada <span style="font-size:18px;">→</span></a>
+          <a href="#servicios" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;background:transparent;color:#232058;padding:16px 28px;border-radius:12px;border:1.5px solid rgba(35,32,88,0.22);transition:border-color .2s ease, background .2s ease;" style-hover="border-color:#232058;background:rgba(35,32,88,0.04);">Ver lo que hacemos</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHOWREEL placeholder -->
+    <section style="max-width:1240px;margin:0 auto;padding:8px 32px 100px;">
+      <div data-reveal style="aspect-ratio:16/6.2;border-radius:20px;border:1px solid rgba(35,32,88,0.14);background:repeating-linear-gradient(135deg, rgba(35,32,88,0.055) 0 14px, rgba(35,32,88,0.02) 14px 28px);display:flex;align-items:center;justify-content:center;">
+        <span style="font-family:'Space Mono',monospace;font-size:14px;letter-spacing:0.08em;color:rgba(35,32,88,0.42);">[ showreel · producción audiovisual ]</span>
+      </div>
+    </section>
+
+    <!-- NOSOTROS -->
+    <section id="nosotros" style="border-top:1px solid rgba(35,32,88,0.12);">
+      <div style="max-width:1240px;margin:0 auto;padding:96px 32px;display:flex;flex-wrap:wrap;gap:56px;">
+        <div data-reveal style="flex:0 1 320px;">
+          <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#E8A23D;">Quiénes somos</div>
+          <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,46px);line-height:1.08;letter-spacing:-0.02em;margin:18px 0 0;color:#232058;">Una sola casa técnica.</h2>
+        </div>
+        <div data-reveal style="flex:1 1 460px;max-width:640px;">
+          <p style="font-size:clamp(17px,1.4vw,20px);line-height:1.62;color:#46436f;margin:0;">Bashira Digital es un estudio digital con estructura internacional (LLC en Estados Unidos) y un equipo técnico unificado. Nacimos para resolver lo que a la mayoría de las empresas les cuesta coordinar: la tecnología, el contenido y el crecimiento.</p>
+          <p style="font-size:clamp(17px,1.4vw,20px);line-height:1.62;color:#46436f;margin:22px 0 0;">En vez de contratar tres proveedores distintos, trabajás con un solo equipo que entiende cómo se conectan el software, los datos, la IA y la comunicación. Operamos para clientes en Argentina, Uruguay, España y Estados Unidos, combinando estándares de producción profesional con la agilidad de un estudio chico.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" style="border-top:1px solid rgba(35,32,88,0.12);">
+      <div style="max-width:1240px;margin:0 auto;padding:96px 32px;">
+        <div data-reveal style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:24px;">
+          <div>
+            <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#E8A23D;">Servicios</div>
+            <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,46px);line-height:1.08;letter-spacing:-0.02em;margin:18px 0 0;color:#232058;">Construimos lo digital. Operamos el resultado.</h2>
+          </div>
+        </div>
+        <div style="border-bottom:1px solid rgba(35,32,88,0.12);">
+          <sc-for list="{{ services }}" as="s" hint-placeholder-count="5">
+            <div data-reveal style="display:flex;flex-wrap:wrap;gap:28px;align-items:baseline;padding:38px 0;border-top:1px solid rgba(35,32,88,0.12);transition:padding-left .3s ease;" style-hover="padding-left:10px;">
+              <div style="font-family:'Space Mono',monospace;font-weight:700;font-size:17px;color:#E8A23D;flex:0 0 40px;">{{ s.n }}</div>
+              <h3 style="font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(21px,2.3vw,29px);line-height:1.16;letter-spacing:-0.01em;margin:0;flex:0 0 320px;color:#232058;">{{ s.t }}</h3>
+              <p style="flex:1 1 360px;max-width:54ch;font-size:16.5px;line-height:1.6;color:#46436f;margin:0;">{{ s.d }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <!-- POR QUÉ (sección navy) -->
+    <section id="porque" style="background:#232058;color:#F6F4EC;position:relative;overflow:hidden;">
+      <svg style="position:absolute;right:-60px;bottom:-40px;width:320px;opacity:0.08;" viewBox="0 0 120 30" aria-hidden="true"><path d="M5 8 Q60 32 115 8" fill="none" stroke="#E8A23D" stroke-width="6" stroke-linecap="round"/></svg>
+      <div style="max-width:1240px;margin:0 auto;padding:100px 32px;position:relative;">
+        <div data-reveal style="max-width:620px;">
+          <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#E8A23D;">Por qué Bashira</div>
+          <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,46px);line-height:1.08;letter-spacing:-0.02em;margin:18px 0 0;color:#F6F4EC;">Menos proveedores. Más coherencia.</h2>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:0 56px;margin-top:40px;">
+          <sc-for list="{{ whyPoints }}" as="w" hint-placeholder-count="4">
+            <div data-reveal style="flex:1 1 380px;padding:34px 0;border-top:1px solid rgba(246,244,236,0.18);">
+              <div style="font-family:'Space Mono',monospace;font-size:14px;color:#E8A23D;margin-bottom:14px;">{{ w.n }}</div>
+              <h3 style="font-family:'Poppins',sans-serif;font-weight:600;font-size:22px;line-height:1.2;margin:0 0 12px;color:#F6F4EC;">{{ w.t }}</h3>
+              <p style="font-size:16px;line-height:1.6;color:rgba(246,244,236,0.74);margin:0;max-width:46ch;">{{ w.d }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEDIOS / PERRODISMO -->
+    <section id="medios" style="border-top:1px solid rgba(35,32,88,0.12);">
+      <div style="max-width:1240px;margin:0 auto;padding:96px 32px;display:flex;flex-wrap:wrap;gap:56px;align-items:center;">
+        <div data-reveal style="flex:1 1 420px;">
+          <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#E8A23D;">División de medios</div>
+          <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,46px);line-height:1.06;letter-spacing:-0.02em;margin:18px 0 0;color:#232058;">Perrodismo.com</h2>
+          <p style="font-size:clamp(17px,1.4vw,19px);line-height:1.62;color:#46436f;margin:22px 0 0;max-width:52ch;">Nuestro diario digital y división de producción periodística. Combinamos periodismo, narrativa audiovisual y presentadores de IA para contar la actualidad internacional de otra forma. Es nuestro laboratorio de contenido y la prueba viviente de lo que podemos producir para vos.</p>
+          <a href="https://perrodismo.com" style="display:inline-flex;align-items:center;gap:10px;margin-top:28px;font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;color:#232058;border-bottom:2px solid #E8A23D;padding-bottom:3px;transition:gap .2s ease;" style-hover="gap:16px;">Visitar Perrodismo.com <span style="font-size:18px;">→</span></a>
+        </div>
+        <div data-reveal style="flex:1 1 380px;aspect-ratio:4/3;border-radius:20px;border:1px solid rgba(35,32,88,0.14);background:repeating-linear-gradient(135deg, rgba(35,32,88,0.055) 0 14px, rgba(35,32,88,0.02) 14px 28px);display:flex;align-items:center;justify-content:center;">
+          <span style="font-family:'Space Mono',monospace;font-size:13.5px;letter-spacing:0.06em;color:rgba(35,32,88,0.42);">[ perrodismo · diario digital ]</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section id="contacto" style="max-width:1240px;margin:0 auto;padding:40px 32px 110px;">
+      <div data-reveal style="background:#232058;border-radius:28px;padding:clamp(40px,6vw,80px);position:relative;overflow:hidden;">
+        <svg style="position:absolute;right:-40px;top:-30px;width:260px;opacity:0.1;" viewBox="0 0 120 30" aria-hidden="true"><path d="M5 8 Q60 32 115 8" fill="none" stroke="#E8A23D" stroke-width="6" stroke-linecap="round"/></svg>
+        <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(30px,4.2vw,52px);line-height:1.06;letter-spacing:-0.02em;margin:0;color:#F6F4EC;max-width:18ch;">Hablemos de tu próximo proyecto.</h2>
+        <p style="font-size:clamp(16px,1.4vw,19px);line-height:1.6;color:rgba(246,244,236,0.78);margin:22px 0 0;max-width:54ch;">Contanos qué necesitás —un producto, una campaña, una pieza de contenido o todo junto— y te respondemos con una propuesta concreta.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:36px;">
+          <a href="mailto:hola@bashira.digital" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;background:#E8A23D;color:#232058;padding:16px 28px;border-radius:12px;transition:transform .2s ease, background .2s ease;" style-hover="background:#f0ad4a;transform:translateY(-2px);">Agendar una llamada</a>
+          <a href="mailto:hola@bashira.digital" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;background:transparent;color:#F6F4EC;padding:16px 28px;border-radius:12px;border:1.5px solid rgba(246,244,236,0.3);transition:border-color .2s ease;" style-hover="border-color:#F6F4EC;">Escribirnos</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  </sc-if>
+
+  <!-- ============ LOOK 02 · BLOQUE ============ -->
+  <sc-if value="{{ isBloque }}" hint-placeholder-val="{{ true }}">
+  <main>
+
+    <!-- HERO navy -->
+    <section style="background:#232058;color:#F6F4EC;position:relative;overflow:hidden;">
+      <svg style="position:absolute;right:-50px;bottom:-50px;width:340px;opacity:0.08;" viewBox="0 0 120 30" aria-hidden="true"><path d="M5 8 Q60 32 115 8" fill="none" stroke="#E8A23D" stroke-width="6" stroke-linecap="round"/></svg>
+      <div style="max-width:1240px;margin:0 auto;padding:84px 32px 88px;display:flex;flex-wrap:wrap;gap:56px;align-items:center;position:relative;">
+        <div data-reveal style="flex:1 1 480px;">
+          <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.16em;text-transform:uppercase;color:#E8A23D;display:flex;align-items:center;gap:12px;"><span style="width:30px;height:1px;background:#E8A23D;display:inline-block;"></span>Inteligencia digital que trae buenas noticias</div>
+          <h1 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(40px,5.6vw,72px);line-height:1.04;letter-spacing:-0.025em;margin:24px 0 0;color:#F6F4EC;max-width:15ch;">Estudio digital de IA, software y medios.</h1>
+          <p style="font-size:clamp(16px,1.4vw,19px);line-height:1.6;color:rgba(246,244,236,0.78);margin:26px 0 0;max-width:54ch;">Diseñamos, desarrollamos y operamos productos digitales de punta a punta. Una sola casa técnica para software a medida, IA, marketing de performance y producción audiovisual.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;">
+            <a href="#contacto" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;background:#E8A23D;color:#232058;padding:16px 28px;border-radius:12px;display:inline-flex;align-items:center;gap:10px;transition:transform .2s ease, background .2s ease;" style-hover="background:#f0ad4a;transform:translateY(-2px);">Agendar una llamada <span style="font-size:18px;">→</span></a>
+            <a href="#servicios" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;background:transparent;color:#F6F4EC;padding:16px 28px;border-radius:12px;border:1.5px solid rgba(246,244,236,0.3);transition:border-color .2s ease;" style-hover="border-color:#F6F4EC;">Ver lo que hacemos</a>
+          </div>
+        </div>
+        <div data-reveal style="flex:1 1 360px;aspect-ratio:4/3.4;border-radius:20px;border:1px solid rgba(246,244,236,0.2);background:repeating-linear-gradient(135deg, rgba(246,244,236,0.08) 0 14px, rgba(246,244,236,0.03) 14px 28px);display:flex;align-items:center;justify-content:center;">
+          <span style="font-family:'Space Mono',monospace;font-size:13.5px;letter-spacing:0.06em;color:rgba(246,244,236,0.55);">[ showreel · trabajo ]</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOSOTROS panel -->
+    <section id="nosotros">
+      <div style="max-width:1240px;margin:0 auto;padding:88px 32px 40px;">
+        <div data-reveal style="background:#FBFAF3;border:1px solid rgba(35,32,88,0.12);border-radius:24px;padding:clamp(32px,4.5vw,56px);display:flex;flex-wrap:wrap;gap:48px;">
+          <div style="flex:0 1 300px;">
+            <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#E8A23D;">Quiénes somos</div>
+            <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(28px,3.2vw,40px);line-height:1.08;letter-spacing:-0.02em;margin:16px 0 0;color:#232058;">Una sola casa técnica.</h2>
+          </div>
+          <div style="flex:1 1 440px;max-width:640px;">
+            <p style="font-size:clamp(16px,1.3vw,18px);line-height:1.62;color:#46436f;margin:0;">Bashira Digital es un estudio digital con estructura internacional (LLC en Estados Unidos) y un equipo técnico unificado. Resolvemos lo que a la mayoría de las empresas les cuesta coordinar: la tecnología, el contenido y el crecimiento.</p>
+            <p style="font-size:clamp(16px,1.3vw,18px);line-height:1.62;color:#46436f;margin:20px 0 0;">En vez de contratar tres proveedores distintos, trabajás con un solo equipo que entiende cómo se conectan el software, los datos, la IA y la comunicación. Operamos en Argentina, Uruguay, España y Estados Unidos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS cards -->
+    <section id="servicios">
+      <div style="max-width:1240px;margin:0 auto;padding:64px 32px 40px;">
+        <div data-reveal style="margin-bottom:36px;">
+          <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#E8A23D;">Servicios</div>
+          <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,46px);line-height:1.08;letter-spacing:-0.02em;margin:16px 0 0;color:#232058;">Construimos lo digital. Operamos el resultado.</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:20px;">
+          <sc-for list="{{ services }}" as="s" hint-placeholder-count="5">
+            <div data-reveal style="background:#FBFAF3;border:1px solid rgba(35,32,88,0.12);border-radius:18px;padding:32px;transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;" style-hover="transform:translateY(-3px);border-color:rgba(35,32,88,0.28);box-shadow:0 16px 40px rgba(35,32,88,0.10);">
+              <div style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:11px;background:rgba(232,162,61,0.16);font-family:'Space Mono',monospace;font-weight:700;font-size:15px;color:#d8902a;margin-bottom:20px;">{{ s.n }}</div>
+              <h3 style="font-family:'Poppins',sans-serif;font-weight:600;font-size:21px;line-height:1.2;letter-spacing:-0.01em;margin:0 0 12px;color:#232058;">{{ s.t }}</h3>
+              <p style="font-size:15.5px;line-height:1.58;color:#46436f;margin:0;">{{ s.d }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <!-- POR QUÉ cards -->
+    <section id="porque">
+      <div style="max-width:1240px;margin:0 auto;padding:64px 32px 40px;">
+        <div data-reveal style="margin-bottom:36px;max-width:620px;">
+          <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#E8A23D;">Por qué Bashira</div>
+          <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,46px);line-height:1.08;letter-spacing:-0.02em;margin:16px 0 0;color:#232058;">Menos proveedores. Más coherencia.</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:20px;">
+          <sc-for list="{{ whyPoints }}" as="w" hint-placeholder-count="4">
+            <div data-reveal style="background:#232058;border-radius:18px;padding:32px;">
+              <div style="font-family:'Space Mono',monospace;font-size:14px;color:#E8A23D;margin-bottom:14px;">{{ w.n }}</div>
+              <h3 style="font-family:'Poppins',sans-serif;font-weight:600;font-size:21px;line-height:1.2;margin:0 0 12px;color:#F6F4EC;">{{ w.t }}</h3>
+              <p style="font-size:15.5px;line-height:1.58;color:rgba(246,244,236,0.74);margin:0;">{{ w.d }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEDIOS -->
+    <section id="medios">
+      <div style="max-width:1240px;margin:0 auto;padding:64px 32px 40px;">
+        <div data-reveal style="background:#FBFAF3;border:1px solid rgba(35,32,88,0.12);border-radius:24px;padding:clamp(32px,4.5vw,56px);display:flex;flex-wrap:wrap;gap:48px;align-items:center;">
+          <div style="flex:1 1 400px;">
+            <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#E8A23D;">División de medios</div>
+            <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(28px,3.4vw,44px);line-height:1.06;letter-spacing:-0.02em;margin:16px 0 0;color:#232058;">Perrodismo.com</h2>
+            <p style="font-size:clamp(16px,1.3vw,18px);line-height:1.6;color:#46436f;margin:20px 0 0;max-width:50ch;">Nuestro diario digital. Combinamos periodismo, narrativa audiovisual y presentadores de IA para contar la actualidad internacional de otra forma — nuestro laboratorio de contenido y la prueba de lo que producimos para vos.</p>
+            <a href="https://perrodismo.com" style="display:inline-flex;align-items:center;gap:10px;margin-top:26px;font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;color:#232058;border-bottom:2px solid #E8A23D;padding-bottom:3px;transition:gap .2s ease;" style-hover="gap:16px;">Visitar Perrodismo.com <span style="font-size:18px;">→</span></a>
+          </div>
+          <div style="flex:1 1 320px;aspect-ratio:4/3;border-radius:16px;border:1px solid rgba(35,32,88,0.14);background:repeating-linear-gradient(135deg, rgba(35,32,88,0.055) 0 14px, rgba(35,32,88,0.02) 14px 28px);display:flex;align-items:center;justify-content:center;">
+            <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.06em;color:rgba(35,32,88,0.42);">[ perrodismo · diario ]</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="contacto" style="max-width:1240px;margin:0 auto;padding:40px 32px 110px;">
+      <div data-reveal style="background:#E8A23D;border-radius:28px;padding:clamp(40px,6vw,76px);">
+        <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(30px,4.2vw,52px);line-height:1.05;letter-spacing:-0.02em;margin:0;color:#232058;max-width:18ch;">Hablemos de tu próximo proyecto.</h2>
+        <p style="font-size:clamp(16px,1.4vw,19px);line-height:1.55;color:#3a2f12;margin:20px 0 0;max-width:54ch;">Contanos qué necesitás —un producto, una campaña, una pieza de contenido o todo junto— y te respondemos con una propuesta concreta.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;">
+          <a href="mailto:hola@bashira.digital" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;background:#232058;color:#F6F4EC;padding:16px 28px;border-radius:12px;transition:transform .2s ease, background .2s ease;" style-hover="background:#1b1942;transform:translateY(-2px);">Agendar una llamada</a>
+          <a href="mailto:hola@bashira.digital" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;background:transparent;color:#232058;padding:16px 28px;border-radius:12px;border:1.5px solid rgba(35,32,88,0.35);transition:border-color .2s ease, background .2s ease;" style-hover="border-color:#232058;background:rgba(35,32,88,0.06);">Escribirnos</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  </sc-if>
+
+  <!-- ============ FOOTER (compartido) ============ -->
+  <footer style="background:#232058;color:#F6F4EC;">
+    <div style="max-width:1240px;margin:0 auto;padding:72px 32px 40px;">
+      <div style="display:flex;flex-wrap:wrap;gap:48px;justify-content:space-between;">
+        <div style="flex:1 1 320px;max-width:380px;">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <svg width="32" height="32" viewBox="0 0 56 56" aria-hidden="true"><rect x="4" y="4" width="48" height="48" rx="13" fill="#F6F4EC"/><path d="M20 12 V40 M20 12 H30 A7 7 0 0 1 30 26 H20 M20 26 H32 A7 7 0 0 1 32 40 H20" fill="none" stroke="#232058" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 43 Q28 51 42 43" fill="none" stroke="#E8A23D" stroke-width="4.5" stroke-linecap="round"/></svg>
+            <span style="font-family:'Poppins',sans-serif;font-weight:700;font-size:20px;letter-spacing:-0.02em;color:#F6F4EC;">bashira</span>
+          </div>
+          <p style="font-size:15px;line-height:1.6;color:rgba(246,244,236,0.7);margin:18px 0 0;">Estudio digital · IA, software, marketing y medios. Construimos y operamos lo que tu negocio necesita online.</p>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:48px;">
+          <div>
+            <div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#8d8ab0;margin-bottom:16px;">Navegación</div>
+            <div style="display:flex;flex-direction:column;gap:11px;">
+              <a href="#servicios" style="font-size:15px;color:rgba(246,244,236,0.82);" style-hover="color:#E8A23D;">Servicios</a>
+              <a href="#nosotros" style="font-size:15px;color:rgba(246,244,236,0.82);" style-hover="color:#E8A23D;">Nosotros</a>
+              <a href="#porque" style="font-size:15px;color:rgba(246,244,236,0.82);" style-hover="color:#E8A23D;">Por qué Bashira</a>
+              <a href="#medios" style="font-size:15px;color:rgba(246,244,236,0.82);" style-hover="color:#E8A23D;">Perrodismo.com</a>
+            </div>
+          </div>
+          <div>
+            <div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#8d8ab0;margin-bottom:16px;">Contacto</div>
+            <div style="display:flex;flex-direction:column;gap:11px;">
+              <a href="mailto:hola@bashira.digital" style="font-size:15px;color:rgba(246,244,236,0.82);" style-hover="color:#E8A23D;">hola@bashira.digital</a>
+              <a href="#contacto" style="font-size:15px;color:rgba(246,244,236,0.82);" style-hover="color:#E8A23D;">Agendar una llamada</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(246,244,236,0.16);margin-top:48px;padding-top:24px;display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;">
+        <span style="font-size:13.5px;color:rgba(246,244,236,0.6);">© {{ year }} Bashira Digital LLC — Registrada en Wyoming, EE. UU. Todos los derechos reservados.</span>
+        <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.06em;color:rgba(246,244,236,0.5);">Software · IA · Marketing · Medios</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ SELECTOR DE VARIANTE ============ -->
+  <div style="position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:300;display:flex;align-items:center;gap:6px;background:#232058;padding:6px;border-radius:100px;box-shadow:0 10px 34px rgba(35,32,88,0.32);">
+    <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#8d8ab0;padding:0 8px 0 10px;">Look</span>
+    <sc-if value="{{ isPapel }}" hint-placeholder-val="{{ true }}">
+      <button onClick="{{ setPapel }}" style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.04em;padding:9px 17px;border-radius:100px;border:none;cursor:pointer;white-space:nowrap;background:#F6F4EC;color:#232058;">01 · Papel</button>
+      <button onClick="{{ setBloque }}" style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.04em;padding:9px 17px;border-radius:100px;border:none;cursor:pointer;white-space:nowrap;background:transparent;color:rgba(246,244,236,0.7);transition:color .2s ease;" style-hover="color:#F6F4EC;">02 · Bloque</button>
+    </sc-if>
+    <sc-if value="{{ isBloque }}" hint-placeholder-val="{{ true }}">
+      <button onClick="{{ setPapel }}" style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.04em;padding:9px 17px;border-radius:100px;border:none;cursor:pointer;white-space:nowrap;background:transparent;color:rgba(246,244,236,0.7);transition:color .2s ease;" style-hover="color:#F6F4EC;">01 · Papel</button>
+      <button onClick="{{ setBloque }}" style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.04em;padding:9px 17px;border-radius:100px;border:none;cursor:pointer;white-space:nowrap;background:#F6F4EC;color:#232058;">02 · Bloque</button>
+    </sc-if>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { look: 'papel' };
+
+  setLook(look) {
+    if (this.state.look === look) return;
+    this.setState({ look });
+    try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) { window.scrollTo(0, 0); }
+  }
+
+  componentDidMount() {
+    this._raf = requestAnimationFrame(() => this.setupReveal());
+  }
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.look !== this.state.look) {
+      this._raf = requestAnimationFrame(() => this.setupReveal());
+    }
+  }
+  componentWillUnmount() {
+    if (this._io) this._io.disconnect();
+    if (this._raf) cancelAnimationFrame(this._raf);
+  }
+
+  setupReveal() {
+    if (this._io) this._io.disconnect();
+    const els = Array.from(document.querySelectorAll('[data-reveal]'));
+    els.forEach((el) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1)';
+    });
+    this._io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'none';
+          this._io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+    els.forEach((el) => this._io.observe(el));
+  }
+
+  renderVals() {
+    const look = this.state.look;
+    const tabBase = {
+      fontFamily: '"Space Mono", monospace',
+      fontSize: '12px',
+      letterSpacing: '0.04em',
+      padding: '9px 17px',
+      borderRadius: '100px',
+      border: 'none',
+      cursor: 'pointer',
+      whiteSpace: 'nowrap',
+      transition: 'background .25s ease, color .25s ease',
+    };
+    const services = [
+      { n: '01', t: 'Inteligencia Artificial y Automatización', d: 'Chatbots empresariales, agentes de ventas con IA y flujos de automatización que reducen costos y liberan a tu equipo de lo repetitivo. Integramos modelos de lenguaje a tus sistemas, con resultados medibles.' },
+      { n: '02', t: 'Desarrollo de Software', d: 'Aplicaciones web y móviles a medida, del MVP al producto en producción. Construido bien, mantenible y escalable, a la altura de soluciones serias.' },
+      { n: '03', t: 'Marketing Digital y Performance', d: 'SEO, Meta Ads y Google Ads orientados a resultados. No vendemos “presencia”: diseñamos campañas con objetivos claros, métricas transparentes y optimización continua.' },
+      { n: '04', t: 'Producción Audiovisual y Medios', d: 'Contenido y documentales con calidad cinematográfica, flujos profesionales (DaVinci Resolve, Adobe Media Encoder) y lo último en IA para consistencia visual. Hogar de Perrodismo.com.' },
+      { n: '05', t: 'E-commerce y Tiendas Online', d: 'Montamos y operamos tiendas completas: catálogo, fulfillment con terceros, automatización de marketing y analítica. Si vendés productos, te armamos la operación digital que los mueve.' },
+    ];
+    const whyPoints = [
+      { n: '01', t: 'Un solo equipo, todo el stack.', d: 'El mismo equipo que automatiza tus procesos produce tu contenido y corre tus campañas. Menos coordinación, más coherencia.' },
+      { n: '02', t: 'Estructura internacional.', d: 'Operamos a través de una LLC en Estados Unidos, lo que simplifica la contratación y el cobro para clientes globales.' },
+      { n: '03', t: 'Tecnología de frontera, sin humo.', d: 'Usamos IA donde mueve la aguja y la combinamos con criterio humano. Te vendemos el resultado, no la herramienta de moda.' },
+      { n: '04', t: 'Calidad de producción profesional.', d: 'Desde el código hasta el video, trabajamos con estándares de la industria.' },
+    ];
+    return {
+      look,
+      isPapel: look === 'papel',
+      isBloque: look === 'bloque',
+      setPapel: () => this.setLook('papel'),
+      setBloque: () => this.setLook('bloque'),
+      tabA: { ...tabBase, background: look === 'papel' ? '#F6F4EC' : 'transparent', color: look === 'papel' ? '#232058' : 'rgba(246,244,236,0.7)' },
+      tabB: { ...tabBase, background: look === 'bloque' ? '#F6F4EC' : 'transparent', color: look === 'bloque' ? '#232058' : 'rgba(246,244,236,0.7)' },
+      services,
+      whyPoints,
+      year: 2026,
+    };
+  }
+}
+</script>
+</body>
+</html>
