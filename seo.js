@@ -3,7 +3,7 @@ window.BASHIRA_SEO = {
   siteName: 'Bashira Digital',
   email: 'hola@bashiradigital.com',
   logo: 'https://bashiradigital.com/assets/bashira-lockup-horizontal.png',
-  ogImage: 'https://bashiradigital.com/assets/bashira-lockup-horizontal.png',
+  ogImage: 'https://bashiradigital.com/assets/og-image.png',
 
   apply(lang) {
     const t = (window.BASHIRA_COPY && window.BASHIRA_COPY[lang]) || window.BASHIRA_COPY.es;
