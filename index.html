@@ -135,6 +135,49 @@
     .nav-brand span{font-size:19px;}
     .nav-drawer{padding:10px 16px 18px;}
   }
+  .cta-section{max-width:1240px;margin:0 auto;padding:40px 32px 110px;}
+  .cta-card{
+    background:#232058;border-radius:28px;padding:clamp(40px,6vw,80px);
+    position:relative;overflow:hidden;
+  }
+  .cta-card h2{
+    font-family:'Poppins',sans-serif;font-weight:700;
+    font-size:clamp(30px,4.2vw,52px);line-height:1.06;letter-spacing:-0.02em;
+    margin:0;color:#F6F4EC;max-width:18ch;
+  }
+  .cta-card p{
+    font-size:clamp(16px,1.4vw,19px);line-height:1.6;
+    color:rgba(246,244,236,0.78);margin:22px 0 0;max-width:54ch;
+  }
+  .cta-actions{
+    display:flex;flex-wrap:wrap;gap:14px;margin-top:36px;
+  }
+  .cta-btn{
+    font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;
+    padding:16px 28px;border-radius:12px;white-space:nowrap;
+    display:inline-flex;align-items:center;justify-content:center;
+    transition:transform .2s ease,background .2s ease,border-color .2s ease;
+  }
+  .cta-btn-primary{background:#E8A23D;color:#232058;}
+  .cta-btn-primary:hover{background:#f0ad4a;transform:translateY(-2px);}
+  .cta-btn-secondary{background:transparent;color:#F6F4EC;border:1.5px solid rgba(246,244,236,0.3);}
+  .cta-btn-secondary:hover{border-color:#F6F4EC;}
+  .cta-btn-label-short{display:none;}
+  @media (max-width:768px){
+    .cta-section{padding:32px 20px 80px;}
+    .cta-card{padding:32px 24px;text-align:center;}
+    .cta-card h2{max-width:none;margin-inline:auto;}
+    .cta-card p{max-width:34ch;margin-inline:auto;}
+    .cta-actions{
+      justify-content:center;align-items:center;
+      flex-direction:column;margin-top:28px;
+    }
+    .cta-btn{
+      width:min(100%,280px);padding:14px 22px;
+    }
+    .cta-btn-label-long{display:none;}
+    .cta-btn-label-short{display:inline;}
+  }
 </style>
 </head>
 <body>
@@ -290,14 +333,17 @@
     </section>
 
     <!-- CTA FINAL -->
-    <section id="contacto" style="max-width:1240px;margin:0 auto;padding:40px 32px 110px;">
-      <div data-reveal style="background:#232058;border-radius:28px;padding:clamp(40px,6vw,80px);position:relative;overflow:hidden;">
+    <section id="contacto" class="cta-section">
+      <div data-reveal class="cta-card">
         <svg style="position:absolute;right:-40px;top:-30px;width:260px;opacity:0.1;" viewBox="0 0 120 30" aria-hidden="true"><path d="M5 8 Q60 32 115 8" fill="none" stroke="#E8A23D" stroke-width="6" stroke-linecap="round"/></svg>
-        <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(30px,4.2vw,52px);line-height:1.06;letter-spacing:-0.02em;margin:0;color:#F6F4EC;max-width:18ch;">{{ t.ctaTitle }}</h2>
-        <p style="font-size:clamp(16px,1.4vw,19px);line-height:1.6;color:rgba(246,244,236,0.78);margin:22px 0 0;max-width:54ch;">{{ t.ctaDesc }}</p>
-        <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:36px;">
-          <a href="mailto:hola@bashiradigital.com" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;background:#E8A23D;color:#232058;padding:16px 28px;border-radius:12px;transition:transform .2s ease, background .2s ease;" style-hover="background:#f0ad4a;transform:translateY(-2px);">{{ t.ctaSchedule }}</a>
-          <a href="mailto:hola@bashiradigital.com" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;background:transparent;color:#F6F4EC;padding:16px 28px;border-radius:12px;border:1.5px solid rgba(246,244,236,0.3);transition:border-color .2s ease;" style-hover="border-color:#F6F4EC;">{{ t.ctaWrite }}</a>
+        <h2>{{ t.ctaTitle }}</h2>
+        <p>{{ t.ctaDesc }}</p>
+        <div class="cta-actions">
+          <a href="mailto:hola@bashiradigital.com" class="cta-btn cta-btn-primary">
+            <span class="cta-btn-label-long">{{ t.ctaSchedule }}</span>
+            <span class="cta-btn-label-short">{{ t.ctaScheduleShort }}</span>
+          </a>
+          <a href="mailto:hola@bashiradigital.com" class="cta-btn cta-btn-secondary">{{ t.ctaWrite }}</a>
         </div>
       </div>
     </section>
