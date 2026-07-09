@@ -196,7 +196,6 @@
         <a href="#servicios">{{ t.navServices }}</a>
         <a href="#nosotros">{{ t.navAbout }}</a>
         <a href="#porque">{{ t.navWhy }}</a>
-        <a href="#medios">{{ t.navMedia }}</a>
         <div class="nav-lang">
           <button onClick="{{ setEs }}" style="{{ langTabEs }}">ES</button>
           <button onClick="{{ setEn }}" style="{{ langTabEn }}">EN</button>
@@ -227,7 +226,6 @@
           <a href="#servicios" onClick="{{ closeMenu }}">{{ t.navServices }}</a>
           <a href="#nosotros" onClick="{{ closeMenu }}">{{ t.navAbout }}</a>
           <a href="#porque" onClick="{{ closeMenu }}">{{ t.navWhy }}</a>
-          <a href="#medios" onClick="{{ closeMenu }}">{{ t.navMedia }}</a>
         </div>
         <div class="nav-drawer-footer">
           <a href="#contacto" class="nav-drawer-cta" onClick="{{ closeMenu }}">{{ t.navSchedule }}</a>
@@ -252,13 +250,6 @@
           <a href="#contacto" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;background:#232058;color:#F6F4EC;padding:16px 28px;border-radius:12px;display:inline-flex;align-items:center;gap:10px;transition:transform .2s ease, background .2s ease;" style-hover="background:#1b1942;transform:translateY(-2px);">{{ t.ctaSchedule }} <span style="font-size:18px;">→</span></a>
           <a href="#servicios" style="font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;background:transparent;color:#232058;padding:16px 28px;border-radius:12px;border:1.5px solid rgba(35,32,88,0.22);transition:border-color .2s ease, background .2s ease;" style-hover="border-color:#232058;background:rgba(35,32,88,0.04);">{{ t.ctaSeeWork }}</a>
         </div>
-      </div>
-    </section>
-
-    <!-- SHOWREEL placeholder -->
-    <section style="max-width:1240px;margin:0 auto;padding:8px 32px 100px;">
-      <div data-reveal style="aspect-ratio:16/6.2;border-radius:20px;border:1px solid rgba(35,32,88,0.14);background:repeating-linear-gradient(135deg, rgba(35,32,88,0.055) 0 14px, rgba(35,32,88,0.02) 14px 28px);display:flex;align-items:center;justify-content:center;">
-        <span style="font-family:'Space Mono',monospace;font-size:14px;letter-spacing:0.08em;color:rgba(35,32,88,0.42);">{{ t.showreel }}</span>
       </div>
     </section>
 
@@ -317,21 +308,6 @@
       </div>
     </section>
 
-    <!-- MEDIOS / PERRODISMO -->
-    <section id="medios" style="border-top:1px solid rgba(35,32,88,0.12);">
-      <div style="max-width:1240px;margin:0 auto;padding:96px 32px;display:flex;flex-wrap:wrap;gap:56px;align-items:center;">
-        <div data-reveal style="flex:1 1 420px;">
-          <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#E8A23D;">{{ t.mediaLabel }}</div>
-          <h2 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,46px);line-height:1.06;letter-spacing:-0.02em;margin:18px 0 0;color:#232058;">{{ t.mediaTitle }}</h2>
-          <p style="font-size:clamp(17px,1.4vw,19px);line-height:1.62;color:#46436f;margin:22px 0 0;max-width:52ch;">{{ t.mediaDesc }}</p>
-          <a href="https://perrodismo.com" style="display:inline-flex;align-items:center;gap:10px;margin-top:28px;font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;color:#232058;border-bottom:2px solid #E8A23D;padding-bottom:3px;transition:gap .2s ease;" style-hover="gap:16px;">{{ t.visitPerrodismo }} <span style="font-size:18px;">→</span></a>
-        </div>
-        <div data-reveal style="flex:1 1 380px;aspect-ratio:4/3;border-radius:20px;border:1px solid rgba(35,32,88,0.14);background:repeating-linear-gradient(135deg, rgba(35,32,88,0.055) 0 14px, rgba(35,32,88,0.02) 14px 28px);display:flex;align-items:center;justify-content:center;">
-          <span style="font-family:'Space Mono',monospace;font-size:13.5px;letter-spacing:0.06em;color:rgba(35,32,88,0.42);">{{ t.perrodismoPlaceholder }}</span>
-        </div>
-      </div>
-    </section>
-
     <!-- CTA FINAL -->
     <section id="contacto" class="cta-section">
       <div data-reveal class="cta-card">
@@ -368,7 +344,6 @@
               <a href="#servicios" style="font-size:15px;color:rgba(246,244,236,0.82);" style-hover="color:#E8A23D;">{{ t.navServices }}</a>
               <a href="#nosotros" style="font-size:15px;color:rgba(246,244,236,0.82);" style-hover="color:#E8A23D;">{{ t.navAbout }}</a>
               <a href="#porque" style="font-size:15px;color:rgba(246,244,236,0.82);" style-hover="color:#E8A23D;">{{ t.footerWhy }}</a>
-              <a href="#medios" style="font-size:15px;color:rgba(246,244,236,0.82);" style-hover="color:#E8A23D;">{{ t.mediaTitle }}</a>
             </div>
           </div>
           <div>
