@@ -1,7 +1,7 @@
 window.BASHIRA_SEO = {
   siteUrl: 'https://bashiradigital.com',
   siteName: 'Bashira Digital',
-  email: 'hola@bashiradigital.com',
+  email: 'contacto@bashiravision.com',
   logo: 'https://bashiradigital.com/assets/bashira-lockup-horizontal.png',
   ogImage: 'https://bashiradigital.com/assets/og-image.png',
 
