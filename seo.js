@@ -1,9 +1,9 @@
 window.BASHIRA_SEO = {
-  siteUrl: 'https://bashiradigital.com',
-  siteName: 'Bashira Digital',
+  siteUrl: 'https://bashiravision.com',
+  siteName: 'Bashira Vision',
   email: 'contacto@bashiravision.com',
-  logo: 'https://bashiradigital.com/assets/bashira-lockup-horizontal.png',
-  ogImage: 'https://bashiradigital.com/assets/og-image.png',
+  logo: 'https://bashiravision.com/assets/bashira-lockup-horizontal.png',
+  ogImage: 'https://bashiravision.com/assets/og-image.png',
 
   apply(lang) {
     const t = (window.BASHIRA_COPY && window.BASHIRA_COPY[lang]) || window.BASHIRA_COPY.es;

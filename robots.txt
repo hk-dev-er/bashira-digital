@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bashiradigital.com/sitemap.xml
+Sitemap: https://bashiravision.com/sitemap.xml

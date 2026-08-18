@@ -39,7 +39,7 @@ if title_font is None:
 if body_font is None:
     body_font = ImageFont.load_default()
 
-title = "Bashira Digital"
+title = "Bashira Vision"
 tagline = "Inteligencia digital que trae buenas noticias"
 
 tb = draw.textbbox((0, 0), title, font=title_font)

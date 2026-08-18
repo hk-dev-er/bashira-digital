@@ -22,6 +22,12 @@
   "redirects": [
     {
       "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.bashiravision.com" }],
+      "destination": "https://bashiravision.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
       "has": [{ "type": "host", "value": "www.bashiradigital.com" }],
       "destination": "https://bashiradigital.com/:path*",
       "permanent": true
